@@ -1,0 +1,8 @@
+{
+  "name": "easy-sql-electron-runtime",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "electron": "^42.4.1"
+  }
+}

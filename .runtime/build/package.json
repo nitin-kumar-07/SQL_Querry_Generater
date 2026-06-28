@@ -1,0 +1,8 @@
+{
+  "name": "easy-sql-build-runtime",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "rcedit": "^5.0.0"
+  }
+}

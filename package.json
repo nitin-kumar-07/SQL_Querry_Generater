@@ -1,0 +1,28 @@
+{
+  "name": "easy-sql",
+  "version": "1.0.0",
+  "description": "Easy-SQL desktop assistant for MySQL and Ollama",
+  "main": "src/main/main.js",
+  "scripts": {
+    "postinstall": "npm install --prefix .runtime/app && npm install --prefix .runtime/electron && npm install --prefix .runtime/build && npx --prefix .runtime/electron install-electron --no",
+    "start": "node ./.runtime/electron/node_modules/electron/cli.js .",
+    "dev": "node ./.runtime/electron/node_modules/electron/cli.js .",
+    "icon": "node scripts/generate-icon.js",
+    "package": "node scripts/generate-icon.js && node scripts/package-win.js",
+    "setup": "powershell -ExecutionPolicy Bypass -File scripts/make-setup-exe.ps1",
+    "test": "node test/queryClassifier.test.js"
+  },
+  "keywords": [
+    "electron",
+    "mysql",
+    "ollama",
+    "sql"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^42.4.1",
+    "mysql2": "^3.11.5"
+  },
+  "devDependencies": {}
+}
