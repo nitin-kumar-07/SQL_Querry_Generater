@@ -1,8 +1,8 @@
-# Easy-SQL
+# SQL Querry Generater
 
-Easy-SQL is a modern Electron desktop assistant for generating, reviewing, and running MySQL queries with a local or configurable Ollama model. It connects with the MySQL username and password entered by the user, reads only the databases visible to that MySQL account, sends selected schema context to Ollama, and keeps the generated SQL editable before anything runs.
+SQL Querry Generater is a modern Electron desktop assistant for generating, reviewing, and running MySQL queries with a local or configurable Ollama model. It connects with the MySQL username and password entered by the user, reads only the databases visible to that MySQL account, sends selected schema context to Ollama, and keeps the generated SQL editable before anything runs.
 
-The SQL editor is the source of truth. If you edit, replace, restore, or clear generated SQL, Easy-SQL classifies and executes exactly the SQL currently visible in the editor after the required approval flow.
+The SQL editor is the source of truth. If you edit, replace, restore, or clear generated SQL, SQL Querry Generater classifies and executes exactly the SQL currently visible in the editor after the required approval flow.
 
 ## Interface Highlights
 
@@ -25,7 +25,7 @@ Electron and app runtime dependencies are installed in isolated `.runtime` folde
 
 ## Download And Run
 
-Download `Easy-SQL.exe` from the GitHub Releases page, then run it directly on Windows.
+Download `SQL Querry Generater.exe` from the GitHub Releases page, then run it directly on Windows.
 
 Before using the app, make sure:
 
@@ -55,13 +55,13 @@ In the app:
 
 ## MySQL Setup
 
-Run a local or reachable MySQL server and log in with a real MySQL account. Easy-SQL does not use a hidden root account or bypass permissions. The app uses the entered username and password for:
+Run a local or reachable MySQL server and log in with a real MySQL account. SQL Querry Generater does not use a hidden root account or bypass permissions. The app uses the entered username and password for:
 
 - `SHOW DATABASES`
 - schema loading from `INFORMATION_SCHEMA`
 - query execution
 
-If MySQL rejects a query because that account lacks privileges, Easy-SQL shows a permission message. Grant access in MySQL if the user should be allowed to see a database or run a query.
+If MySQL rejects a query because that account lacks privileges, SQL Querry Generater shows a permission message. Grant access in MySQL if the user should be allowed to see a database or run a query.
 
 ## Ollama Setup
 
@@ -78,7 +78,7 @@ The default Ollama URL is:
 http://localhost:11434
 ```
 
-You can change it in **Settings**. Easy-SQL fetches installed models from `/api/tags` and shows them in the model dropdown.
+You can change it in **Settings**. SQL Querry Generater fetches installed models from `/api/tags` and shows them in the model dropdown.
 
 Recommended coding models: qwen2.5-coder:3b or greater, codegemma:7b or greater.
 
@@ -86,20 +86,20 @@ Recommended coding models: qwen2.5-coder:3b or greater, codegemma:7b or greater.
 
 1. Log in with a MySQL host, port, username, and password.
 2. Choose one of the databases visible to that MySQL user.
-3. Easy-SQL loads columns, foreign keys, indexes, and table metadata from `INFORMATION_SCHEMA`.
+3. SQL Querry Generater loads columns, foreign keys, indexes, and table metadata from `INFORMATION_SCHEMA`.
 4. The schema summary is stored in memory and as a temporary file in the system temp folder.
 5. Choose an Ollama model.
 6. Ask for a query in natural language.
 7. Ollama generates one MySQL statement using the selected database schema.
 8. The generated SQL appears in an editable SQL output editor.
-9. Easy-SQL classifies the visible SQL and shows a read/write badge.
+9. SQL Querry Generater classifies the visible SQL and shows a read/write badge.
 10. Run the query only after reviewing or editing it.
 
 Schema temp files never include MySQL passwords. The current schema temp file is deleted when you switch databases and when the app quits.
 
 ## SQL Editing And Execution
 
-The SQL editor is intentionally editable. Easy-SQL does not execute SQL immediately after generation, and it does not execute the original generated SQL if you changed it.
+The SQL editor is intentionally editable. SQL Querry Generater does not execute SQL immediately after generation, and it does not execute the original generated SQL if you changed it.
 
 When **Run Query** is clicked:
 
@@ -158,3 +158,4 @@ Important files:
 - `src/preload.js` exposes the limited renderer API.
 - `src/renderer/app.js` implements the redesigned UI and frontend behavior.
 - `src/renderer/styles.css` contains the responsive visual system.
+
